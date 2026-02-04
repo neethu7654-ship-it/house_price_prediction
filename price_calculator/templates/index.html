@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body { background:black; color:white; font-family:Arial; }
+        input, select, button { padding:8px; margin:5px; }
+    </style>
+</head>
+<body>
+
+<h2>House Price Prediction System</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <input name="area" placeholder="Area (sqft)" required>
+    <input name="bedrooms" placeholder="Bedrooms" required>
+    <input name="bathrooms" placeholder="Bathrooms" required>
+    <input name="floors" placeholder="Floors" required>
+
+    <select name="condition">
+        <option value="Good">Good</option>
+        <option value="Average">Average</option>
+        <option value="Poor">Poor</option>
+    </select>
+
+    <select name="garage">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <select name="location">
+        <option value="Urban">Urban</option>
+        <option value="Suburban">Suburban</option>
+        <option value="Rural">Rural</option>
+    </select>
+
+    <input name="house_age" placeholder="House Age" required>
+
+    <button type="submit">Predict Price</button>
+</form>
+
+{% if prediction %}
+<h3>Estimated Price: ₹ {{ prediction|floatformat:2 }}</h3>
+{% endif %}
+
+</body>
+</html>
