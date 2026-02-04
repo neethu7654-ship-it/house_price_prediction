@@ -1,0 +1,51 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# -------------------------
+# Virtual Environment
+# -------------------------
+venv/
+env/
+.venv/
+
+# -------------------------
+# Django
+# -------------------------
+db.sqlite3
+*.log
+local_settings.py
+settings_local.py
+
+# -------------------------
+# Media & Static
+# -------------------------
+media/
+staticfiles/
+
+# -------------------------
+# ML / Data Files
+# -------------------------
+ml_model/
+*.pkl
+*.h5
+*.joblib
+
+# -------------------------
+# Environment variables
+# -------------------------
+.env
+
+# -------------------------
+# OS / Editor
+# -------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
