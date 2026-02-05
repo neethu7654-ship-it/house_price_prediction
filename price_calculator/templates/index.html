@@ -17,6 +17,20 @@
     <input name="bedrooms" placeholder="Bedrooms" required>
     <input name="bathrooms" placeholder="Bathrooms" required>
     <input name="floors" placeholder="Floors" required>
+    <input name="house_age" placeholder="House Age" required>
+    <input name="yr_renovated" placeholder="Year Renovated (0 if never)" required>
+    <input name="sqft_basement" placeholder="Basement Area (sqft)" required>
+    <input name="lat" placeholder="Latitude" required>
+    <input name="sqft_living15" placeholder="Living Area of 15 Nearest Neighbors (sqft)" required>
+    <input name="sqft_lot" placeholder="Lot Area (sqft)" required>
+    <input name="sqft_above" placeholder="Above Ground Living Area (sqft)" required>
+    <input name="zipcode" placeholder="Zipcode" required>
+    <input name="yr_built" placeholder="Year Built" required>
+    <input name="waterfront" placeholder="Waterfront (Yes/No)" required>
+    <input name="grade" placeholder="Grade (1-13)" required>
+    <input name="view" placeholder="View Rating (0-4)" required>
+    <input name="long" placeholder="Longitude" required>
+    <input name="sqft_living" placeholder="Living Area (sqft)" required>
 
     <select name="condition">
         <option value="Good">Good</option>
@@ -25,8 +39,13 @@
     </select>
 
     <select name="garage">
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+
+    <select name="waterfront">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
     </select>
 
     <select name="location">
@@ -34,8 +53,6 @@
         <option value="Suburban">Suburban</option>
         <option value="Rural">Rural</option>
     </select>
-
-    <input name="house_age" placeholder="House Age" required>
 
     <button type="submit">Predict Price</button>
 </form>
