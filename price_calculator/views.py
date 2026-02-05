@@ -1,3 +1,4 @@
+#how to predict house price based on user input
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
@@ -15,14 +16,28 @@ def predict_price(request):
 
     if request.method == "POST":
         data = {
-            "Area": float(request.POST["area"]),
-            "Bedrooms": int(request.POST["bedrooms"]),
-            "Bathrooms": int(request.POST["bathrooms"]),
-            "Floors": int(request.POST["floors"]),
-            "Condition": request.POST["condition"],
-            "Garage": request.POST["garage"],
-            "Location": request.POST["location"],
-            "House_Age": int(request.POST["house_age"]),
+            "area": float(request.POST["area"]),
+            "bedrooms": int(request.POST["bedrooms"]),
+            "bathrooms": int(request.POST["bathrooms"]),
+            "floors": int(request.POST["floors"]),
+            "condition":1 if request.POST["condition"] == "Good" else 2 if request.POST["condition"] == "Average" else 3,
+            "garage": 1 if request.POST["garage"] == "Yes" else 0,
+            "location": request.POST["location"],
+            "house_Age": int(request.POST["house_age"]),
+            "yr_renovated": int(request.POST["yr_renovated"]),
+            "sqft_basement": float(request.POST["sqft_basement"]),
+            "lat": float(request.POST["lat"]),
+            "sqft_living15": float(request.POST["sqft_living15"]),
+            "sqft_lot": float(request.POST["sqft_lot"]),
+            "sqft_above": float(request.POST["sqft_above"]),
+            "zipcode": request.POST["zipcode"],
+            "yr_built": int(request.POST["yr_built"]),
+            "waterfront": request.POST["waterfront"],
+            "grade": int(request.POST["grade"]),
+            "view": int(request.POST["view"]),
+            "long": float(request.POST["long"]),
+            "sqft_living": float(request.POST["sqft_living"]),
+
         }
 
         input_df = pd.DataFrame([data])
