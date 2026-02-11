@@ -7,6 +7,8 @@ from sklearn.neural_network import MLPRegressor
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline 
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
+
 
 import joblib
 
@@ -55,6 +57,19 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 # Train
 pipeline.fit(X_train, y_train)
+y_pred = pipeline.predict(X_test)
+
+# Evaluation
+r2 = r2_score(y_test, y_pred)
+mae = mean_absolute_error(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)    
+rmse = mse ** 0.5
+
+print("Model Performance:")
+print("R2 Score:", r2)
+print("MAE:", mae)
+print("MSE:", mse)
+print("RMSE:", rmse)
 
 # Save model
 joblib.dump(pipeline, "house_price_model.pkl")
