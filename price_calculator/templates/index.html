@@ -13,6 +13,7 @@
 
 <form method="post">
     {% csrf_token %}
+
     <label for="area">Area (sqft):</label>
     <input name="area" placeholder="Area (sqft)" required>
 
@@ -28,43 +29,30 @@
     <label for="house_age">House Age:</label>
     <input name="house_age" placeholder="House Age" required>
     <br><br>
+
+    <label for="yr_built">Year Built:</label>
+    <input name="yr_built" placeholder="Year Built" required>
+
     <label for="yr_renovated">Year Renovated:</label>
     <input name="yr_renovated" placeholder="Year Renovated (0 if never)" required>
 
     <label for="sqft_basement">Basement Area (sqft):</label>
     <input name="sqft_basement" placeholder="Basement Area (sqft)" required>
 
-    <label for="lat">Latitude:</label>
-    <input name="lat" placeholder="Latitude" required>
-
-    <label for="sqft_living15">Living Area of 15 Nearest Neighbors (sqft):</label>
-    <input name="sqft_living15" placeholder="Living Area of 15 Nearest Neighbors (sqft)" required>
-    <br><br>
     <label for="sqft_lot">Lot Area (sqft):</label>
     <input name="sqft_lot" placeholder="Lot Area (sqft)" required>
-    
-    <label for="sqft_above">Above Ground Living Area:</label>
-    <input name="sqft_above" placeholder="Above Ground Living Area" required>
-
-    <label for="zipcode">Zipcode:</label>
-    <input name="zipcode" placeholder="Zipcode" required>
-
-    <label for="yr_built">Year Built:</label>
-    <input name="yr_built" placeholder="Year Built" required>
-
     <br><br>
+    
+    <label for="sqft_above">Above Ground Area (sqft):</label>
+    <input name="sqft_above" placeholder="Above Ground Area (sqft)" required>
+
     <label for="grade">Grade:</label>
     <input name="grade" placeholder="Grade (1-13)" required>
 
     <label for="view">View Rating:</label>
     <input name="view" placeholder="View Rating (0-4)" required>
-
-    <label for="long">Longitude:</label>
-    <input name="long" placeholder="Longitude" required>
-
-    <label for="sqft_living">Living Area (sqft):</label>
-    <input name="sqft_living" placeholder="Living Area (sqft)" required>
     <br><br>
+
     <label for="condition">Condition:</label>
     <select name="condition">
         <option value="Good">Good</option>
@@ -83,14 +71,6 @@
         <option value="1">Yes</option>
         <option value="0">No</option>
     </select>
-
-    <label for="location">Location:</label>
-    <select name="location">
-        <option value="Urban">Urban</option>
-        <option value="Suburban">Suburban</option>
-        <option value="Rural">Rural</option>
-    </select>
-
     <br><br>
     <button type="submit" style="background-color: green; color: white; padding: 15px; font-size: 18px;"><b>Predict Price</b></button>
 </form>
