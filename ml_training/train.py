@@ -4,7 +4,7 @@ import numpy as np
 
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPRegressor
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline 
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
@@ -34,7 +34,7 @@ numerical_cols = X.select_dtypes(exclude=["object"]).columns
 preprocessor = ColumnTransformer(
     transformers=[
         ("cat", OneHotEncoder(handle_unknown="ignore"), categorical_cols),
-        ("num", "passthrough", numerical_cols)])
+        ("num", StandardScaler(), numerical_cols)])
 
 # Model
 model = MLPRegressor(
