@@ -22,22 +22,15 @@ def predict_price(request):
             "floors": int(request.POST["floors"]),
             "condition":1 if request.POST["condition"] == "Good" else 2 if request.POST["condition"] == "Average" else 3,
             "garage": 1 if request.POST["garage"] == "Yes" else 0,
-            "location": request.POST["location"],
-            "house_Age": int(request.POST["house_age"]),
+            "house_age": int(request.POST["house_age"]),
+            "yr_built": int(request.POST["yr_built"]),
             "yr_renovated": int(request.POST["yr_renovated"]),
             "sqft_basement": float(request.POST["sqft_basement"]),
-            "lat": float(request.POST["lat"]),
-            "sqft_living15": float(request.POST["sqft_living15"]),
             "sqft_lot": float(request.POST["sqft_lot"]),
             "sqft_above": float(request.POST["sqft_above"]),
-            "zipcode": request.POST["zipcode"],
-            "yr_built": int(request.POST["yr_built"]),
-            "waterfront": request.POST["waterfront"],
+            "waterfront":1 if request.POST["waterfront"] == "Yes" else 0,
             "grade": int(request.POST["grade"]),
             "view": int(request.POST["view"]),
-            "long": float(request.POST["long"]),
-            "sqft_living": float(request.POST["sqft_living"]),
-
         }
 
         input_df = pd.DataFrame([data])
