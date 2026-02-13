@@ -40,7 +40,8 @@ preprocessor = ColumnTransformer(
 model = MLPRegressor(
     hidden_layer_sizes=(64, 32),
     activation="relu",
-    max_iter=1000,
+    max_iter=2000,
+    early_stopping=True,
     random_state=42
 )
 
